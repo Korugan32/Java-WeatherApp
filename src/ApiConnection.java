@@ -1,7 +1,6 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,12 +8,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ApiConnection {
-
-    private StringBuffer response = new StringBuffer();
-    private JSONParser parser = new JSONParser();
+    private final StringBuffer response = new StringBuffer();
+    private final JSONParser parser = new JSONParser();
     private JSONObject result;
-
-    private final String key = "api_key";
+    private final String key = "d47f96efd4814cfbbdb123512242505";
 
     public void connect(String location) throws IOException, ParseException {
         URL url = new URL("https://api.weatherapi.com/v1/current.json?key=" + key + "&q=" + location + "&aqi=no");

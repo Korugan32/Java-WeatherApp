@@ -1,13 +1,14 @@
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
-
-public class main {
-    public static void main(String[] args) throws IOException, ParseException {
-        NewJFrame app = new NewJFrame();
-        app.run();
+public class Main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            try {
+                new NewJFrame().setVisible(true);
+            } catch (IOException | ParseException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
-
-
-
